@@ -49,10 +49,15 @@ There are no Frequently Asked Questions yet, because this has just been released
 * Added i18n support for localization of the plugin.
 * Added French Translation (thank you to Frederick Marcoux for his hard work translating!).
 
+= 0.2 =
+* Added i18n support for localization of the plugin.
+* Added French Translation (thank you to Frederick Marcoux for his hard work translating!).
+
 = 0.1 =
 * First release.
 
 == Internationalization (i18n) ==
+
 This plugin has been translated into the languages listed below:
 
 * fr_FR - French. Thank you to Frederick Marcoux for contributing!
