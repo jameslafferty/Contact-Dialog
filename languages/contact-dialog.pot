@@ -1,0 +1,97 @@
+# Copyright (C) 2010 Contact Dialog
+# This file is distributed under the same license as the Contact Dialog package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Contact Dialog 0.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/contact-dialog\n"
+"POT-Creation-Date: 2011-01-15 23:21:12+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#. #-#-#-#-#  plugin.pot (Contact Dialog 0.1)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: lib/nscontactdialogadmin.class.php:86
+msgid "Contact Dialog"
+msgstr ""
+
+#: lib/nscontactdialogadmin.class.php:98
+msgid "Contact Form Dialog"
+msgstr ""
+
+#: lib/nscontactdialogadmin.class.php:100
+msgid ""
+"Set the options below to select what class link to attach the mailing list "
+"dialog to, what email address to send incoming mails to, and to change the "
+"recaptcha validation fields."
+msgstr ""
+
+#: lib/nscontactdialogadmin.class.php:112
+msgid "Update Contact Dialog Options"
+msgstr ""
+
+#: lib/nscontactdialogadmin.class.php:130
+msgid "Your Name"
+msgstr ""
+
+#: lib/nscontactdialogadmin.class.php:132
+msgid "Your Email Address"
+msgstr ""
+
+#: lib/nscontactdialogadmin.class.php:134
+msgid "Subject"
+msgstr ""
+
+#: lib/nscontactdialogadmin.class.php:136
+msgid "Message"
+msgstr ""
+
+#: lib/nscontactdialogadmin.class.php:138
+msgid "Send Message"
+msgstr ""
+
+#: lib/nscontactdialog.class.php:72
+msgid "We're working on sending your message"
+msgstr ""
+
+#: lib/nscontactdialog.class.php:74
+msgid ""
+"Sorry, but we didn't get that. Please check that you've filled out the whole "
+"form and try again."
+msgstr ""
+
+#: lib/nscontactdialog.class.php:146
+msgid ""
+"You missed a required field. Please fill out the form completely and try "
+"again."
+msgstr ""
+
+#: lib/nscontactdialog.class.php:154
+msgid "That doesn't look like a valid email address. Perhaps you made a typo?"
+msgstr ""
+
+#: lib/nscontactdialog.class.php:166
+msgid "Sorry, but you missed the Recaptcha. Please try again."
+msgstr ""
+
+#: lib/nscontactdialog.class.php:186
+msgid "Thank you for getting in touch with us through our online form."
+msgstr ""
+
+#. #-#-#-#-#  plugin.pot (Contact Dialog 0.1)  #-#-#-#-#
+#. Plugin URI of the plugin/theme
+#. #-#-#-#-#  plugin.pot (Contact Dialog 0.1)  #-#-#-#-#
+#. Author URI of the plugin/theme
+msgid "https://github.com/kalchas"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "An AJAX-driven contact form in a modal dialog box."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "James Lafferty"
+msgstr ""

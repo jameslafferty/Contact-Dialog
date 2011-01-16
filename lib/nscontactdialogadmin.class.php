@@ -83,7 +83,7 @@ class NSContactDialogAdmin {
 	 */
 	public function admin_menu () {
 		
-		add_menu_page(__('Contact Dialog'), __('Contact Dialog'), 'manage_options', 'nscontactdialogadmin', array('NSContactDialogAdmin', 'admin_form'));
+		add_menu_page(__('Contact Dialog', 'contact-dialog'), __('Contact Dialog', 'contact-dialog'), 'manage_options', 'nscontactdialogadmin', array('NSContactDialogAdmin', 'admin_form'));
 		
 	}
 	
@@ -95,9 +95,9 @@ class NSContactDialogAdmin {
 		
 		$admin_form_content = '<div class="wrap">';
 		
-		$admin_form_content .= '<h2>' . __('Contact Form Dialog') . '</h2>';
+		$admin_form_content .= '<h2>' . __('Contact Form Dialog', 'contact-dialog') . '</h2>';
 		
-		$admin_form_content .= '<p class="howto">' . __('Set the options below to select what class link to attach the mailing list dialog to, what email address to send incoming mails to, and to change the recaptcha validation fields.') . '</p>';
+		$admin_form_content .= '<p class="howto">' . __('Set the options below to select what class link to attach the mailing list dialog to, what email address to send incoming mails to, and to change the recaptcha validation fields.', 'contact-dialog') . '</p>';
 		
 		$admin_form_content .= '<form action="' . $_SERVER['REQUEST_URI'] . '" method="post">';
 		
@@ -109,7 +109,7 @@ class NSContactDialogAdmin {
 		
 		$admin_form_content .= '<tr>';
 		
-		$admin_form_content .= '<td colspan="2"><input class="button-primary" type="submit" value="' . __('Update Contact Dialog Options') . '" /></td>';
+		$admin_form_content .= '<td colspan="2"><input class="button-primary" type="submit" value="' . __('Update Contact Dialog Options', 'contact-dialog') . '" /></td>';
 		
 		$admin_form_content .= '</tr>';
 		
@@ -127,15 +127,15 @@ class NSContactDialogAdmin {
 		
 		$contact_form = '<form action="' . get_bloginfo('wpurl') . '" method="post">';
 		
-		$contact_form .= '<p><label>' . __('Your Name') . '<br /><input class="regular-text required" name="name" type="text" /></label></p>';
+		$contact_form .= '<p><label>' . __('Your Name', 'contact-dialog') . '<br /><input class="regular-text required" name="name" type="text" /></label></p>';
 		
-		$contact_form .= '<p><label>' . __('Your Email Address') . '<br /><input class="regular-text required email" name="email" type="text" /></label></p>';
+		$contact_form .= '<p><label>' . __('Your Email Address', 'contact-dialog') . '<br /><input class="regular-text required email" name="email" type="text" /></label></p>';
 		
-		$contact_form .= '<p><label>' . __('Subject') . '<br /><input class="regular-text required" name="subject" type="text" /></label></p>';
+		$contact_form .= '<p><label>' . __('Subject', 'contact-dialog') . '<br /><input class="regular-text required" name="subject" type="text" /></label></p>';
 		
-		$contact_form .= '<p><label>' . __('Message') . '<br /><textarea class="message-body" name="message-body"></textarea></label></p>';
+		$contact_form .= '<p><label>' . __('Message', 'contact-dialog') . '<br /><textarea class="message-body" name="message-body"></textarea></label></p>';
 		
-		$contact_form .= '<p><input class="button" type="submit" value="' . __('Send Message') . '" /></p>';
+		$contact_form .= '<p><input class="button" type="submit" value="' . __('Send Message', 'contact-dialog') . '" /></p>';
 		
 		$contact_form .= '</form>';
 		
@@ -198,7 +198,7 @@ class NSContactDialogAdmin {
 	 */
 	private static function format_an_option_field ($value) {
 		
-		$option_field = '<th scope="row"><label>' . __($value['label']) . '</label></th><td>';
+		$option_field = '<th scope="row"><label>' . __($value['label'], 'contact-dialog') . '</label></th><td>';
 		
 		switch ($value['type']) {
 			

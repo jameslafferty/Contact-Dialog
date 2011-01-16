@@ -4,6 +4,8 @@ class NSContactDialog {
 	
 	const URL = NSCD_DIR_URL;
 	
+	public static $textdomain = 'contact-dialog';
+	
 	private static $instance;
 	
 	/**
@@ -27,6 +29,8 @@ class NSContactDialog {
 		add_shortcode('ns-contact-dialog', array($this, 'shortcode'));
 		
 		$nscontactdialogadmin = NSContactDialogAdmin::get_instance();
+		
+		self::load_textdomain();
 
 	}
 	
@@ -69,9 +73,9 @@ class NSContactDialog {
 					
 					$options['nscdaction'] = 'send-message';
 					
-					$options['working_message'] = __('We\'re working on sending your message');
+					$options['working_message'] = __('We\'re working on sending your message', 'contact-dialog');
 					
-					$options['invalid_message'] = __('Sorry, but we didn\'t get that. Please check that you\'ve filled out the whole form and try again.');
+					$options['invalid_message'] = __('Sorry, but we didn\'t get that. Please check that you\'ve filled out the whole form and try again.', 'contact-dialog');
 					
 					$options['contact_form'] = NSContactDialogAdmin::get_contact_form();
 					
@@ -143,7 +147,7 @@ class NSContactDialog {
 		
 		if (empty($name) || empty($email_address) || empty($subject) || empty($message) || empty($recaptcha_challenge_field) || empty($recaptcha_response_field)) {
 			
-			$response['message'] = __('You missed a required field. Please fill out the form completely and try again.');
+			$response['message'] = __('You missed a required field. Please fill out the form completely and try again.', 'contact-dialog');
 			
 			$response['type'] = 'general';
 			
@@ -151,7 +155,7 @@ class NSContactDialog {
 			
 		} elseif (!is_email($email_address)) {
 			
-			$response['message'] = __('That doesn\'t look like a valid email address. Perhaps you made a typo?');
+			$response['message'] = __('That doesn\'t look like a valid email address. Perhaps you made a typo?', 'contact-dialog');
 			
 			$response['type'] = 'email';
 			
@@ -163,7 +167,7 @@ class NSContactDialog {
 			
 			if (false == $recaptcha_check) {
 				
-				$response['message'] = __('Sorry, but you missed the Recaptcha. Please try again.');
+				$response['message'] = __('Sorry, but you missed the Recaptcha. Please try again.', 'contact-dialog');
 				
 				$response['type'] = 'recaptcha';
 				
@@ -183,13 +187,23 @@ class NSContactDialog {
 					
 				}
 				
-				$response['message'] = __('Thank you for getting in touch with us through our online form.');
+				$response['message'] = __('Thank you for getting in touch with us through our online form.', 'contact-dialog');
 				
 				return $response;
 				
 			}
 			
 		}
+		
+	}
+	
+	/**
+	 * @since 0.2
+	 * @author jameslafferty
+	 */
+	private static function load_textdomain () {
+		
+		load_plugin_textdomain(self::$textdomain, null, str_replace('lib', 'languages', dirname(plugin_basename(__FILE__))));
 		
 	}
 	

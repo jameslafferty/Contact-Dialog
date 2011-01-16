@@ -31,13 +31,20 @@ There are no Frequently Asked Questions yet, because this has just been released
 4. When the link is clicked, the Contact Dialog will display.
 
 == Changelog ==
+= 0.2 =
+* i18n support added.
+* French translation added.
+
 = 0.1 =
 * First release.
 
 == Upgrade Notice ==
-
+= 0.2 =
+* Added i18n support for localization of the plugin.
+* Added French Translation (thank you to Frederick Marcoux for his hard work translating!).
 = 0.1 =
 * First release.
 
 == Internationalization (i18n) ==
-This plugin has not yet been translated. If you're interested in doing a translation into your language, please let me know.
+This plugin has been translated into the languages listed below. If you're interested in doing a translation into your language, please let me know.
+* fr_FR - French. Thank you to Frederick Marcoux for contributing!
