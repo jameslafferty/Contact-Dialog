@@ -183,7 +183,7 @@ class NSContactDialogAdmin {
 	 */
 	public static function update_options () {
 
-		if (wp_verify_nonce($_POST['nscontactdialog'], basename(__FILE__))) {
+		if (isset($_POST['nscontactdialog']) && wp_verify_nonce($_POST['nscontactdialog'], basename(__FILE__))) {
 			
 			$new_values = $_POST;
 			

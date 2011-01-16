@@ -4,7 +4,7 @@ Plugin Name: Contact Dialog
 Plugin URI: https://github.com/kalchas
 Description: An AJAX-driven contact form in a modal dialog box.
 Author: James Lafferty
-Version: 0.2.1
+Version: 0.3
 Author URI: https://github.com/kalchas
 License: GPL2
 */

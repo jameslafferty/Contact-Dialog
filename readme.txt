@@ -31,6 +31,9 @@ There are no Frequently Asked Questions yet, because this has just been released
 4. When the link is clicked, the Contact Dialog will display.
 
 == Changelog ==
+= 0.3 =
+* Removed some notices that were appearing in WP_DEBUG mode.
+
 = 0.2.1 =
 * Missed some class file updates on the previous commit. This corrects that.
 
@@ -42,8 +45,11 @@ There are no Frequently Asked Questions yet, because this has just been released
 * First release.
 
 == Upgrade Notice ==
+= 0.3 =
+* Removes some notices that were appearing in WP_DEBUG mode (minor).
+
 = 0.2.1 =
-*Adds some class files that were missing from the previous commit.
+* Adds some class files that were missing from the previous commit.
 
 = 0.2 =
 * Added i18n support for localization of the plugin.

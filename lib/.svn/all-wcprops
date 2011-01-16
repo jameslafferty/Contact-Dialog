@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 41
-/!svn/ver/332953/contact-dialog/trunk/lib
+/!svn/ver/333099/contact-dialog/trunk/lib
 END
 nscontactdialogadmin.class.php
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/!svn/ver/333099/contact-dialog/trunk/lib/nscontactdialogadmin.class.php
+/!svn/ver/333100/contact-dialog/trunk/lib/nscontactdialogadmin.class.php
 END
 nscontactdialog.class.php
 K 25

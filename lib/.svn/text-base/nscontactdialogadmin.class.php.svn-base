@@ -14,11 +14,11 @@ class NSContactDialogAdmin {
 	);
 	
 	private static $option_labels;
-	
+
 	private static $options = array(
 			
 		array(
-			
+				
 			'name' => 'contact_email_address',
 			'type' => 'text'
 				
@@ -56,7 +56,7 @@ class NSContactDialogAdmin {
 	 * @author jameslafferty
 	 */
 	private function __construct () {
-		
+
 		self::$option_labels = array(
 			
 			'contact_email_address' => __('Send Emails To', 'contact-dialog'),
