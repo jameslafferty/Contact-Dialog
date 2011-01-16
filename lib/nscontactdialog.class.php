@@ -78,7 +78,7 @@ class NSContactDialog {
 		
 		if (isset($_GET['nscontactdialog']) && wp_verify_nonce($_GET['nscontactdialog'], basename(__FILE__))) {
 			
-			if (isset($_GET['nscdaction']) {
+			if (isset($_GET['nscdaction'])) {
 			
 				switch ($_GET['nscdaction']) {
 
