@@ -22,7 +22,9 @@ If you find this plugin useful, please rate it and/or make a donation.
 1. Please rate the plugin and/or make a donation.
 
 == Frequently Asked Questions ==
-There are no Frequently Asked Questions yet, because this has just been released.
+
+= Why am I not getting emails? =
+Could be one of a few things. First, check the version of the plugin you're using. If it's lower than 0.4, upgrade and it should resolve the issue. If that doesn't do it, change the default email address from my address to your own... It'll make my inbox lighter, too. Finally, you may be having an issue with mail in general. Contact your server admin for help.
 
 == Screenshots ==
 1. Select the Contact Dialog menu page.
@@ -31,6 +33,9 @@ There are no Frequently Asked Questions yet, because this has just been released
 4. When the link is clicked, the Contact Dialog will display.
 
 == Changelog ==
+= 0.4 =
+* Major bugfix. The plugin was sending emails to the sender rather than to the recipient specified in the admin. That must be annoying! Thanks very much to Dustin Adler for pointing out this issue.
+
 = 0.3 =
 * Removed some notices that were appearing in WP_DEBUG mode.
 
@@ -45,6 +50,9 @@ There are no Frequently Asked Questions yet, because this has just been released
 * First release.
 
 == Upgrade Notice ==
+= 0.4 =
+* The previous version sent emails to the sender -- an-NOY-ing! -- This version fixes that and actually sends the emails to the specified admin.
+
 = 0.3 =
 * Removes some notices that were appearing in WP_DEBUG mode (minor).
 

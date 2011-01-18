@@ -8,6 +8,8 @@ class NSContactDialog {
 	
 	private static $instance;
 	
+	private $donate_link = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JSL4JTA4KMZLG';
+	
 	/**
 	 * @since 0.1
 	 * @author jameslafferty
@@ -24,6 +26,7 @@ class NSContactDialog {
 		}
 		
 		//Filter hooks
+		add_filter('plugin_row_meta', array(&$this, 'add_plugin_meta_links'), 10, 2);
 		
 		//Shortcode
 		add_shortcode('ns-contact-dialog', array($this, 'shortcode'));
@@ -52,54 +55,74 @@ class NSContactDialog {
 	}
 	
 	/**
+	 * @since 0.3
+	 * @author jameslafferty
+	 */
+	public function add_plugin_meta_links ($links, $file) {
+		
+		if (plugin_basename(realpath(dirname(__FILE__) . '/../contact-dialog.php')) == $file) {
+			
+			$links[] = '<a href="' . $this->donate_link . '">' . __('Donate') . '</a>';
+			
+		}
+		
+		return $links;
+		
+	}
+	
+	/**
 	 * @since 0.1
 	 * @author jameslafferty
 	 */
 	public function handle_ajax_request () {
 		
-		if (wp_verify_nonce($_GET['nscontactdialog'], basename(__FILE__))) {
+		if (isset($_GET['nscontactdialog']) && wp_verify_nonce($_GET['nscontactdialog'], basename(__FILE__))) {
 			
-			switch ($_GET['nscdaction']) {
-				
-				case 'add-dialogs' :
-				
-					header('Content-type: application/javascript');
-					
-					$options = NSContactDialogAdmin::get_options();
-					
-					unset($options['recaptcha_api_private_key']);
-					
-					$options['nscontactdialog'] = wp_create_nonce(basename(__FILE__));
-					
-					$options['nscdaction'] = 'send-message';
-					
-					$options['working_message'] = __('We\'re working on sending your message', 'contact-dialog');
-					
-					$options['invalid_message'] = __('Sorry, but we didn\'t get that. Please check that you\'ve filled out the whole form and try again.', 'contact-dialog');
-					
-					$options['contact_form'] = NSContactDialogAdmin::get_contact_form();
-					
-					echo 'jQuery(function($){$(document).nsContactDialog(' . json_encode($options) . ');})';
-					
-					exit(0);
-					
-					break;
-					
-				case 'send-message' :
-				
-					header('Content-type: application/json');
-					
-					$result = self::send_email($_GET['name'], $_GET['email'], $_GET['subject'], $_GET['message-body'], $_GET['recaptcha_challenge_field'], $_GET['recaptcha_response_field']);
-					
-					echo json_encode($result);
-					
-					exit(0);
-					
-					break;
-					
-				default :
-				
-					break;
+			if (isset($_GET['nscdaction'])) {
+			
+				switch ($_GET['nscdaction']) {
+
+					case 'add-dialogs' :
+
+						header('Content-type: application/javascript');
+
+						$options = NSContactDialogAdmin::get_options();
+
+						unset($options['recaptcha_api_private_key']);
+
+						$options['nscontactdialog'] = wp_create_nonce(basename(__FILE__));
+
+						$options['nscdaction'] = 'send-message';
+
+						$options['working_message'] = __('We\'re working on sending your message', 'contact-dialog');
+
+						$options['invalid_message'] = __('Sorry, but we didn\'t get that. Please check that you\'ve filled out the whole form and try again.', 'contact-dialog');
+
+						$options['contact_form'] = NSContactDialogAdmin::get_contact_form();
+
+						echo 'jQuery(function($){$(document).nsContactDialog(' . json_encode($options) . ');})';
+
+						exit(0);
+
+						break;
+
+					case 'send-message' :
+
+						header('Content-type: application/json');
+
+						$result = self::send_email($_GET['name'], $_GET['email'], $_GET['subject'], $_GET['message-body'], $_GET['recaptcha_challenge_field'], $_GET['recaptcha_response_field']);
+
+						echo json_encode($result);
+
+						exit(0);
+
+						break;
+
+					default :
+
+						break;
+
+				}
 				
 			}
 			
