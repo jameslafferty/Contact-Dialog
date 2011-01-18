@@ -34,7 +34,7 @@ Could be one of a few things. First, check the version of the plugin you're usin
 
 == Changelog ==
 = 0.4 =
-* Major bugfix. The plugin was sending emails to the sender rather than to the recipient specified in the admin. That must be annoying! Thanks very much to Dustin Adler for pointing out this issue.
+* Major bugfix. The plugin was sending emails to the sender rather than to the recipient specified in the admin. That must be annoying! Thanks very much to a user who shall remain anonymous for pointing out this issue.
 
 = 0.3 =
 * Removed some notices that were appearing in WP_DEBUG mode.
