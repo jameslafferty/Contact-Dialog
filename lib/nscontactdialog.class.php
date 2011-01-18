@@ -110,7 +110,7 @@ class NSContactDialog {
 
 						header('Content-type: application/json');
 
-						$result = self::send_email($_GET['name'], $_GET['email'], $_GET['subject'], $_GET['message-body'], $_GET['recaptcha_challenge_field'], $_GET['recaptcha_response_field']);
+						$result = self::send_email($options['contact_email_address'], $_GET['name'], $_GET['email'], $_GET['subject'], $_GET['message-body'], $_GET['recaptcha_challenge_field'], $_GET['recaptcha_response_field']);
 
 						echo json_encode($result);
 
@@ -164,7 +164,7 @@ class NSContactDialog {
 	 * @since 0.1
 	 * @author jameslafferty
 	 */
-	private static function send_email ($name = null, $email_address = null, $subject = null, $message = null, $recaptcha_challenge_field = null, $recaptcha_response_field = null) {
+	private static function send_email ($target_email, $name = null, $email_address = null, $subject = null, $message = null, $recaptcha_challenge_field = null, $recaptcha_response_field = null) {
 		
 		$response['response'] = 'error'; //Assume the worst.
 		
@@ -202,7 +202,7 @@ class NSContactDialog {
 				
 				$message = stripslashes($message);
 					
-				$result = array(wp_mail($email_address, stripslashes($subject), $message, $headers));
+				$result = array(wp_mail($target_email, stripslashes($subject), $message, $headers));
 				
 				if (true == $result) {
 					
