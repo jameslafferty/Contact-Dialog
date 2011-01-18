@@ -79,14 +79,14 @@ class NSContactDialog {
 		if (isset($_GET['nscontactdialog']) && wp_verify_nonce($_GET['nscontactdialog'], basename(__FILE__))) {
 			
 			if (isset($_GET['nscdaction'])) {
+				
+				$options = NSContactDialogAdmin::get_options();
 			
 				switch ($_GET['nscdaction']) {
 
 					case 'add-dialogs' :
 
 						header('Content-type: application/javascript');
-
-						$options = NSContactDialogAdmin::get_options();
 
 						unset($options['recaptcha_api_private_key']);
 
