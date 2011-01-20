@@ -33,6 +33,9 @@ Could be one of a few things. First, check the version of the plugin you're usin
 4. When the link is clicked, the Contact Dialog will display.
 
 == Changelog ==
+= 0.4.2 =
+* Added additional French translation on admin side.
+
 = 0.4 =
 * Major bugfix. The plugin was sending emails to the sender rather than to the recipient specified in the admin. That must be annoying! Thanks very much to a user who shall remain anonymous for pointing out this issue.
 
@@ -50,6 +53,9 @@ Could be one of a few things. First, check the version of the plugin you're usin
 * First release.
 
 == Upgrade Notice ==
+= 0.4.2 =
+* This updates some fields that previously were not being translated into French.
+
 = 0.4 =
 * The previous version sent emails to the sender -- an-NOY-ing! -- This version fixes that and actually sends the emails to the specified admin.
 
